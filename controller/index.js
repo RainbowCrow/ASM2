@@ -35,7 +35,7 @@ module.exports = {
         await dbo.collection("Renters").insertOne(newRenter);
         await dbo.collection("Books").updateOne({"_id": ObjectID(result._id)}, decrease_amount);
         
-        res.redirect('/index/hire_return');
+        res.redirect('/hire_return');
     },
     return: async (req, res) => {
         let id = req.query.id;
@@ -55,6 +55,6 @@ module.exports = {
         await dbo.collection("Renters").deleteOne(condition);
         await dbo.collection("Books").updateOne({"_id": ObjectID(result._id)}, increase_amount);
 
-        res.redirect('/index/hire_return');
+        res.redirect('/hire_return');
     },
 };

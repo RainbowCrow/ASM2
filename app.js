@@ -14,7 +14,7 @@ app.set('views', './views'); // Thư mục views nằm cùng cấp với file ap
 app.set('view engine', 'hbs'); // Sử dụng hbs làm view engine
 
 const admin_Route = require('./routes/index');
-app.use('/index', admin_Route);
+app.use('/', admin_Route);
 
 const books_Route = require('./routes/books');
 app.use('/books', books_Route);
